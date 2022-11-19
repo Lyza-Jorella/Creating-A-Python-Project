@@ -31,12 +31,10 @@ def calculate():
     if equation != "":
         try:
             result = eval(equation)
-            except:
+        except:
             result = "error"
             equation = ""
-
-
-label_result.config(text=result)
+        label_result.config(text=result)
 
 label_result = Label(root, width=25, height=2, text="", font=("arial", 30))
 label_result.pack()
@@ -80,7 +78,7 @@ Button(root, text="0", width=11, height=1, font=("arial", 30, "bold"), bd=1, fg=
 Button(root, text=".", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#2a2d36",
        command=lambda: show(".")).place(x=290, y=500)
 Button(root, text="=", width=5, height=3, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#fe9037",
-       command=lambda: show("=")).place(x=430, y=400)
+       command=lambda: calculate()).place(x=430, y=400)
 
 root.mainloop()
 
